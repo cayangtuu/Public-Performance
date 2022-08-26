@@ -1,0 +1,14 @@
+prefix=/home/cayang/anaconda3/envs/Evaluate
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datarootdir=${prefix}/share
+datadir=${datarootdir}/proj
+
+Name: PROJ
+Description: Coordinate transformation software library
+Requires:
+Version: 7.1.0
+Libs: -L${libdir} -lproj
+Libs.private: -L/home/cayang/anaconda3/envs/Evaluate/lib -lsqlite3 -L/home/cayang/anaconda3/envs/Evaluate/lib -ltiff -L/home/cayang/anaconda3/envs/Evaluate/lib -lcurl -lstdc++
+Cflags: -I${includedir}

@@ -1,0 +1,7 @@
+###Met_Evaluate_Tool 執行方法###
+#1. 使用者自行產出氣象模擬資料csv檔案
+#2. 將上述氣象模擬csv檔案資料按照氣溫(T2)、風速(WS)、風向(WD)，分別放入Data/Sim/的T2、WS、WD資料夾中
+#3. 氣象模擬csv檔案格式為
+#4. 執行 MetEva_Taiwan_d4.py程式(輸入 python MetEva_Taiwan_d4.py)，
+#   並按照界面指示輸入欲模擬的年月(ex.2019-01)
+#5. 性能評估結果將在Data/Evaluate/資料夾中

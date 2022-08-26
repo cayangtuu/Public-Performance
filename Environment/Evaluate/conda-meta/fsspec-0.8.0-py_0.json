@@ -1,0 +1,492 @@
+{
+  "build": "py_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "constrains": [],
+  "depends": [
+    "python >=3.5"
+  ],
+  "extracted_package_dir": "/home/cayang/anaconda3/pkgs/fsspec-0.8.0-py_0",
+  "features": "",
+  "files": [
+    "lib/python3.7/site-packages/fsspec-0.8.0.dist-info/INSTALLER",
+    "lib/python3.7/site-packages/fsspec-0.8.0.dist-info/LICENSE",
+    "lib/python3.7/site-packages/fsspec-0.8.0.dist-info/METADATA",
+    "lib/python3.7/site-packages/fsspec-0.8.0.dist-info/RECORD",
+    "lib/python3.7/site-packages/fsspec-0.8.0.dist-info/REQUESTED",
+    "lib/python3.7/site-packages/fsspec-0.8.0.dist-info/WHEEL",
+    "lib/python3.7/site-packages/fsspec-0.8.0.dist-info/direct_url.json",
+    "lib/python3.7/site-packages/fsspec-0.8.0.dist-info/top_level.txt",
+    "lib/python3.7/site-packages/fsspec/__init__.py",
+    "lib/python3.7/site-packages/fsspec/_version.py",
+    "lib/python3.7/site-packages/fsspec/asyn.py",
+    "lib/python3.7/site-packages/fsspec/caching.py",
+    "lib/python3.7/site-packages/fsspec/compression.py",
+    "lib/python3.7/site-packages/fsspec/conftest.py",
+    "lib/python3.7/site-packages/fsspec/core.py",
+    "lib/python3.7/site-packages/fsspec/dircache.py",
+    "lib/python3.7/site-packages/fsspec/fuse.py",
+    "lib/python3.7/site-packages/fsspec/gui.py",
+    "lib/python3.7/site-packages/fsspec/implementations/__init__.py",
+    "lib/python3.7/site-packages/fsspec/implementations/cached.py",
+    "lib/python3.7/site-packages/fsspec/implementations/dask.py",
+    "lib/python3.7/site-packages/fsspec/implementations/dvc.py",
+    "lib/python3.7/site-packages/fsspec/implementations/ftp.py",
+    "lib/python3.7/site-packages/fsspec/implementations/git.py",
+    "lib/python3.7/site-packages/fsspec/implementations/github.py",
+    "lib/python3.7/site-packages/fsspec/implementations/hdfs.py",
+    "lib/python3.7/site-packages/fsspec/implementations/http.py",
+    "lib/python3.7/site-packages/fsspec/implementations/local.py",
+    "lib/python3.7/site-packages/fsspec/implementations/memory.py",
+    "lib/python3.7/site-packages/fsspec/implementations/sftp.py",
+    "lib/python3.7/site-packages/fsspec/implementations/smb.py",
+    "lib/python3.7/site-packages/fsspec/implementations/webhdfs.py",
+    "lib/python3.7/site-packages/fsspec/implementations/zip.py",
+    "lib/python3.7/site-packages/fsspec/mapping.py",
+    "lib/python3.7/site-packages/fsspec/registry.py",
+    "lib/python3.7/site-packages/fsspec/spec.py",
+    "lib/python3.7/site-packages/fsspec/transaction.py",
+    "lib/python3.7/site-packages/fsspec/utils.py",
+    "lib/python3.7/site-packages/fsspec/__pycache__/__init__.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/_version.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/asyn.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/caching.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/compression.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/conftest.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/core.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/dircache.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/fuse.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/gui.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/__init__.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/cached.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/dask.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/dvc.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/ftp.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/git.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/github.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/hdfs.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/http.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/local.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/memory.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/sftp.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/smb.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/webhdfs.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/implementations/__pycache__/zip.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/mapping.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/registry.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/spec.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/transaction.cpython-37.pyc",
+    "lib/python3.7/site-packages/fsspec/__pycache__/utils.cpython-37.pyc"
+  ],
+  "fn": "fsspec-0.8.0-py_0.tar.bz2",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/home/cayang/anaconda3/pkgs/fsspec-0.8.0-py_0",
+    "type": 1
+  },
+  "md5": "79c54eea80f5c4a95d675587b7ddadb4",
+  "name": "fsspec",
+  "noarch": "python",
+  "package_tarball_full_path": "/home/cayang/anaconda3/pkgs/fsspec-0.8.0-py_0.tar.bz2",
+  "package_type": "noarch_python",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "site-packages/fsspec-0.8.0.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "site-packages/fsspec-0.8.0.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94",
+        "sha256_in_prefix": "2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94",
+        "size_in_bytes": 1513
+      },
+      {
+        "_path": "site-packages/fsspec-0.8.0.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "88441518f7d43136d6f1ac43b1dd280d725cc50c722daf47d5ced6c3a6402e80",
+        "sha256_in_prefix": "88441518f7d43136d6f1ac43b1dd280d725cc50c722daf47d5ced6c3a6402e80",
+        "size_in_bytes": 3840
+      },
+      {
+        "_path": "site-packages/fsspec-0.8.0.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "b2e7e6e0cd8ee6b2427a41a806976b4f9b8da7dae16a0a0a161142d57e7d4195",
+        "sha256_in_prefix": "b2e7e6e0cd8ee6b2427a41a806976b4f9b8da7dae16a0a0a161142d57e7d4195",
+        "size_in_bytes": 4655
+      },
+      {
+        "_path": "site-packages/fsspec-0.8.0.dist-info/REQUESTED",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/fsspec-0.8.0.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "8389ccb3b77e5e5f7ec42f57a2f52bb031c65edf854f4135ed8aa8f760c47ef6",
+        "sha256_in_prefix": "8389ccb3b77e5e5f7ec42f57a2f52bb031c65edf854f4135ed8aa8f760c47ef6",
+        "size_in_bytes": 92
+      },
+      {
+        "_path": "site-packages/fsspec-0.8.0.dist-info/direct_url.json",
+        "path_type": "hardlink",
+        "sha256": "e62d4c2f3f5feefe16bfd13e71c96f0793837d0289f4863a804f8f22db7f79c5",
+        "sha256_in_prefix": "e62d4c2f3f5feefe16bfd13e71c96f0793837d0289f4863a804f8f22db7f79c5",
+        "size_in_bytes": 102
+      },
+      {
+        "_path": "site-packages/fsspec-0.8.0.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "6e5b76a43ad00f03771a495cc35dc248f2d045de9a68e809f00c6aad6dfde4c2",
+        "sha256_in_prefix": "6e5b76a43ad00f03771a495cc35dc248f2d045de9a68e809f00c6aad6dfde4c2",
+        "size_in_bytes": 7
+      },
+      {
+        "_path": "site-packages/fsspec/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "9df6af2c1d2804a03343b42f173dc48088be1fceffa1c9888dcdc5938450c077",
+        "sha256_in_prefix": "9df6af2c1d2804a03343b42f173dc48088be1fceffa1c9888dcdc5938450c077",
+        "size_in_bytes": 625
+      },
+      {
+        "_path": "site-packages/fsspec/_version.py",
+        "path_type": "hardlink",
+        "sha256": "0fc30ae842ca7272006fd3430e63c840a1072c1a163db1a47cbdc87f39715a6c",
+        "sha256_in_prefix": "0fc30ae842ca7272006fd3430e63c840a1072c1a163db1a47cbdc87f39715a6c",
+        "size_in_bytes": 497
+      },
+      {
+        "_path": "site-packages/fsspec/asyn.py",
+        "path_type": "hardlink",
+        "sha256": "fe4a2e87f9b297f48f9ccbf4c830d19a6d9ea9177f49c8e6cc22593810c5051f",
+        "sha256_in_prefix": "fe4a2e87f9b297f48f9ccbf4c830d19a6d9ea9177f49c8e6cc22593810c5051f",
+        "size_in_bytes": 9516
+      },
+      {
+        "_path": "site-packages/fsspec/caching.py",
+        "path_type": "hardlink",
+        "sha256": "8742ea6f736f96542c096b7da15dabebd3d3aa8a00acee8ad8562e21562ab3ff",
+        "sha256_in_prefix": "8742ea6f736f96542c096b7da15dabebd3d3aa8a00acee8ad8562e21562ab3ff",
+        "size_in_bytes": 11945
+      },
+      {
+        "_path": "site-packages/fsspec/compression.py",
+        "path_type": "hardlink",
+        "sha256": "8e33a3500aba04407e3ffedd8377f3955d5f4cb971e758a423713e3e7120fc34",
+        "sha256_in_prefix": "8e33a3500aba04407e3ffedd8377f3955d5f4cb971e758a423713e3e7120fc34",
+        "size_in_bytes": 4516
+      },
+      {
+        "_path": "site-packages/fsspec/conftest.py",
+        "path_type": "hardlink",
+        "sha256": "4aee646c0aa4b2ae10c4a746fe906fac33746bc91333ace0ecfd2bc22cd2a8d4",
+        "sha256_in_prefix": "4aee646c0aa4b2ae10c4a746fe906fac33746bc91333ace0ecfd2bc22cd2a8d4",
+        "size_in_bytes": 1127
+      },
+      {
+        "_path": "site-packages/fsspec/core.py",
+        "path_type": "hardlink",
+        "sha256": "7707430ee6b0ab08f6610cbb1e84cb5547bb60ba3d69f1dacbb8844c6cd4649a",
+        "sha256_in_prefix": "7707430ee6b0ab08f6610cbb1e84cb5547bb60ba3d69f1dacbb8844c6cd4649a",
+        "size_in_bytes": 19958
+      },
+      {
+        "_path": "site-packages/fsspec/dircache.py",
+        "path_type": "hardlink",
+        "sha256": "2d6258a6628a47c7418e4d4e31591e1419e1725e86cc1f84dfe9055cc2cd8482",
+        "sha256_in_prefix": "2d6258a6628a47c7418e4d4e31591e1419e1725e86cc1f84dfe9055cc2cd8482",
+        "size_in_bytes": 2600
+      },
+      {
+        "_path": "site-packages/fsspec/fuse.py",
+        "path_type": "hardlink",
+        "sha256": "5071b460a025aa2ac145881eed97727dd19a6d99d441b36d3fab336fade5c5d4",
+        "sha256_in_prefix": "5071b460a025aa2ac145881eed97727dd19a6d99d441b36d3fab336fade5c5d4",
+        "size_in_bytes": 4749
+      },
+      {
+        "_path": "site-packages/fsspec/gui.py",
+        "path_type": "hardlink",
+        "sha256": "d71a52f236f5b874b94bdb9af8391857368e5a7928f2f6fc04c1c478913621d3",
+        "sha256_in_prefix": "d71a52f236f5b874b94bdb9af8391857368e5a7928f2f6fc04c1c478913621d3",
+        "size_in_bytes": 13773
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/cached.py",
+        "path_type": "hardlink",
+        "sha256": "746f6b9ca975e2e6052995cd1857be288afe22e2fa4d003bc7333013c1bf407d",
+        "sha256_in_prefix": "746f6b9ca975e2e6052995cd1857be288afe22e2fa4d003bc7333013c1bf407d",
+        "size_in_bytes": 22709
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/dask.py",
+        "path_type": "hardlink",
+        "sha256": "bfcb3b12492552c25069339acd66a6324e65fd07c80f1b1f50b9b3c2e8beee45",
+        "sha256_in_prefix": "bfcb3b12492552c25069339acd66a6324e65fd07c80f1b1f50b9b3c2e8beee45",
+        "size_in_bytes": 4439
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/dvc.py",
+        "path_type": "hardlink",
+        "sha256": "471e595346a2c8499cdf9df3e1a85ad7f151dfa2d66f67dbb1ce2bac47b11ffd",
+        "sha256_in_prefix": "471e595346a2c8499cdf9df3e1a85ad7f151dfa2d66f67dbb1ce2bac47b11ffd",
+        "size_in_bytes": 2153
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/ftp.py",
+        "path_type": "hardlink",
+        "sha256": "4e5c802ec99cc2e8c0f7905991a9597f4c8c86774b5ade7228a37a7c3bb2777f",
+        "sha256_in_prefix": "4e5c802ec99cc2e8c0f7905991a9597f4c8c86774b5ade7228a37a7c3bb2777f",
+        "size_in_bytes": 8535
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/git.py",
+        "path_type": "hardlink",
+        "sha256": "293c10cd33ebe38640bceb7fe576b7edd476326012ec6ea2f3a6f2771623ee11",
+        "sha256_in_prefix": "293c10cd33ebe38640bceb7fe576b7edd476326012ec6ea2f3a6f2771623ee11",
+        "size_in_bytes": 3104
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/github.py",
+        "path_type": "hardlink",
+        "sha256": "da1bf0f0e351e16f4d16ba52529e3c81147b60d573c30875eb6f2d21e4899b82",
+        "sha256_in_prefix": "da1bf0f0e351e16f4d16ba52529e3c81147b60d573c30875eb6f2d21e4899b82",
+        "size_in_bytes": 6918
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/hdfs.py",
+        "path_type": "hardlink",
+        "sha256": "7564b82505902780117b85c774315bdb03db79bc623ec0f7c2ddcd9876505e25",
+        "sha256_in_prefix": "7564b82505902780117b85c774315bdb03db79bc623ec0f7c2ddcd9876505e25",
+        "size_in_bytes": 6089
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/http.py",
+        "path_type": "hardlink",
+        "sha256": "19460be9392f6c0ba0a6d2537e755f3c538f5ea83a84e530c7b2c05957e767af",
+        "sha256_in_prefix": "19460be9392f6c0ba0a6d2537e755f3c538f5ea83a84e530c7b2c05957e767af",
+        "size_in_bytes": 16194
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/local.py",
+        "path_type": "hardlink",
+        "sha256": "7e547a4efb2a193b34739f979c8c231994558b308794715c375ddf11a7049a4e",
+        "sha256_in_prefix": "7e547a4efb2a193b34739f979c8c231994558b308794715c375ddf11a7049a4e",
+        "size_in_bytes": 8710
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/memory.py",
+        "path_type": "hardlink",
+        "sha256": "46154c5876e76a6a21d578997eb94fe86ff76e5ca9d4bea94478bb3dcf4adfe9",
+        "sha256_in_prefix": "46154c5876e76a6a21d578997eb94fe86ff76e5ca9d4bea94478bb3dcf4adfe9",
+        "size_in_bytes": 5948
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/sftp.py",
+        "path_type": "hardlink",
+        "sha256": "b968c1f3af625442516b2cfc1c0afa7c70568b5ae1f97a0ad0ca4d87e2918047",
+        "sha256_in_prefix": "b968c1f3af625442516b2cfc1c0afa7c70568b5ae1f97a0ad0ca4d87e2918047",
+        "size_in_bytes": 4288
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/smb.py",
+        "path_type": "hardlink",
+        "sha256": "08c12a3c5ffbd4d7e6e1a98e4400406b86f66a616accd01810af7e4a61455f7c",
+        "sha256_in_prefix": "08c12a3c5ffbd4d7e6e1a98e4400406b86f66a616accd01810af7e4a61455f7c",
+        "size_in_bytes": 9046
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/webhdfs.py",
+        "path_type": "hardlink",
+        "sha256": "da75b312672195daedeb89078d873ac1aa1e8ed5122646db062ad739fc20fde7",
+        "sha256_in_prefix": "da75b312672195daedeb89078d873ac1aa1e8ed5122646db062ad739fc20fde7",
+        "size_in_bytes": 14266
+      },
+      {
+        "_path": "site-packages/fsspec/implementations/zip.py",
+        "path_type": "hardlink",
+        "sha256": "8111457c7dace66c88fd64416b79af6a7739254ceb47c2be895556364ed57240",
+        "sha256_in_prefix": "8111457c7dace66c88fd64416b79af6a7739254ceb47c2be895556364ed57240",
+        "size_in_bytes": 4915
+      },
+      {
+        "_path": "site-packages/fsspec/mapping.py",
+        "path_type": "hardlink",
+        "sha256": "ec63f4b4593eeb966dd668125371e17de7bae188753e745d901bee217faf99f2",
+        "sha256_in_prefix": "ec63f4b4593eeb966dd668125371e17de7bae188753e745d901bee217faf99f2",
+        "size_in_bytes": 5492
+      },
+      {
+        "_path": "site-packages/fsspec/registry.py",
+        "path_type": "hardlink",
+        "sha256": "285178c874fc02d603f3a2708236f20d4d163e6b8825e40911f3af02cb616bea",
+        "sha256_in_prefix": "285178c874fc02d603f3a2708236f20d4d163e6b8825e40911f3af02cb616bea",
+        "size_in_bytes": 7632
+      },
+      {
+        "_path": "site-packages/fsspec/spec.py",
+        "path_type": "hardlink",
+        "sha256": "8f9db3d257fcbd7df627ab294709f9b3add976d0ee7514f51706dc37d8dcace3",
+        "sha256_in_prefix": "8f9db3d257fcbd7df627ab294709f9b3add976d0ee7514f51706dc37d8dcace3",
+        "size_in_bytes": 47044
+      },
+      {
+        "_path": "site-packages/fsspec/transaction.py",
+        "path_type": "hardlink",
+        "sha256": "2b32557d9c506751de5e205bc02edb6b742d1cc472d34cb24e15d960ffaf3105",
+        "sha256_in_prefix": "2b32557d9c506751de5e205bc02edb6b742d1cc472d34cb24e15d960ffaf3105",
+        "size_in_bytes": 2195
+      },
+      {
+        "_path": "site-packages/fsspec/utils.py",
+        "path_type": "hardlink",
+        "sha256": "94090a1c583aa2a3a8224e5465948702b14e08a34d468f595d8da8a047fe1382",
+        "sha256_in_prefix": "94090a1c583aa2a3a8224e5465948702b14e08a34d468f595d8da8a047fe1382",
+        "size_in_bytes": 11108
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/_version.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/asyn.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/caching.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/compression.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/conftest.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/core.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/dircache.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/fuse.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/gui.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/cached.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/dask.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/dvc.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/ftp.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/git.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/github.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/hdfs.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/http.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/local.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/memory.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/sftp.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/smb.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/webhdfs.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/implementations/__pycache__/zip.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/mapping.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/registry.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/spec.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/transaction.cpython-37.pyc",
+        "path_type": "pyc_file"
+      },
+      {
+        "_path": "lib/python3.7/site-packages/fsspec/__pycache__/utils.cpython-37.pyc",
+        "path_type": "pyc_file"
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "fsspec==0.8.0=py_0",
+  "sha256": "c10cd410b37638c29549ec8c20b2f359c75449e5a2ad790fbb16b6b0c26127aa",
+  "size": 62722,
+  "subdir": "noarch",
+  "timestamp": 1596221572941,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/fsspec-0.8.0-py_0.tar.bz2",
+  "version": "0.8.0"
+}

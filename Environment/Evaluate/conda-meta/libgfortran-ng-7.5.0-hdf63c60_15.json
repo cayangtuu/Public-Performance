@@ -1,0 +1,63 @@
+{
+  "build": "hdf63c60_15",
+  "build_number": 15,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [],
+  "extracted_package_dir": "/home/cayang/anaconda3/pkgs/libgfortran-ng-7.5.0-hdf63c60_15",
+  "features": "",
+  "files": [
+    "lib/libgfortran.so",
+    "lib/libgfortran.so.4",
+    "lib/libgfortran.so.4.0.0",
+    "share/licenses/libgfortran/RUNTIME.LIBRARY.EXCEPTION"
+  ],
+  "fn": "libgfortran-ng-7.5.0-hdf63c60_15.tar.bz2",
+  "license": "GPL-3.0-with-GCC-exception",
+  "link": {
+    "source": "/home/cayang/anaconda3/pkgs/libgfortran-ng-7.5.0-hdf63c60_15",
+    "type": 1
+  },
+  "md5": "050d500dbcac18755bc463fdda4365b3",
+  "name": "libgfortran-ng",
+  "package_tarball_full_path": "/home/cayang/anaconda3/pkgs/libgfortran-ng-7.5.0-hdf63c60_15.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/libgfortran.so",
+        "path_type": "softlink",
+        "sha256": "fa61f4b4995143b9833345dbfb6c99c74f613e7291ebcb257fe8ad71dbac1392",
+        "size_in_bytes": 5938144
+      },
+      {
+        "_path": "lib/libgfortran.so.4",
+        "path_type": "softlink",
+        "sha256": "fa61f4b4995143b9833345dbfb6c99c74f613e7291ebcb257fe8ad71dbac1392",
+        "size_in_bytes": 5938144
+      },
+      {
+        "_path": "lib/libgfortran.so.4.0.0",
+        "path_type": "hardlink",
+        "sha256": "fa61f4b4995143b9833345dbfb6c99c74f613e7291ebcb257fe8ad71dbac1392",
+        "sha256_in_prefix": "fa61f4b4995143b9833345dbfb6c99c74f613e7291ebcb257fe8ad71dbac1392",
+        "size_in_bytes": 5938144
+      },
+      {
+        "_path": "share/licenses/libgfortran/RUNTIME.LIBRARY.EXCEPTION",
+        "path_type": "hardlink",
+        "sha256": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+        "sha256_in_prefix": "9d6b43ce4d8de0c878bf16b54d8e7a10d9bd42b75178153e3af6a815bdc90f74",
+        "size_in_bytes": 3324
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "libgfortran-ng==7.5.0=hdf63c60_15",
+  "sha256": "dabfec799a7fb72018334733a0b5d39ef87442ed94cf77285e92e0e7764a7f97",
+  "size": 1316663,
+  "subdir": "linux-64",
+  "timestamp": 1597473094130,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/libgfortran-ng-7.5.0-hdf63c60_15.tar.bz2",
+  "version": "7.5.0"
+}

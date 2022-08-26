@@ -1,0 +1,14 @@
+prefix=/home/cayang/anaconda3/envs/Evaluate
+exec_prefix=/home/cayang/anaconda3/envs/Evaluate
+libdir=/home/cayang/anaconda3/envs/Evaluate/lib
+includedir=/home/cayang/anaconda3/envs/Evaluate/include
+
+Name: FreeType 2
+URL: https://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 23.2.17
+Requires:
+Requires.private: 
+Libs: -L${libdir} -lfreetype
+Libs.private: -lz -L/home/cayang/anaconda3/envs/Evaluate/lib -lpng16 -lm -lz -lm
+Cflags: -I${includedir}/freetype2

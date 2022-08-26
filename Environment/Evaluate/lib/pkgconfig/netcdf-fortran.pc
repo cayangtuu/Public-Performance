@@ -1,0 +1,16 @@
+prefix=/home/cayang/anaconda3/envs/Evaluate
+exec_prefix=/home/cayang/anaconda3/envs/Evaluate
+libdir=/home/cayang/anaconda3/envs/Evaluate//home/cayang/anaconda3/envs/Evaluate/lib
+includedir=/home/cayang/anaconda3/envs/Evaluate/include
+fmoddir=
+ccompiler=/home/cayang/anaconda3/envs/Evaluate/bin/x86_64-conda_cos6-linux-gnu-cc
+fcompiler=/home/cayang/anaconda3/envs/Evaluate/bin/x86_64-conda_cos6-linux-gnu-gfortran
+
+Name: netcdf-fortran
+Description: NetCDF Client Library for Fortran
+URL: http://www.unidata.ucar.edu/netcdf
+Version: 4.5.3
+Requires.private: netcdf > 4.1.1
+Libs: -L${libdir} -lnetcdff
+Libs.private: -L${libdir} -lnetcdff -lnetcdf
+Cflags: -I${includedir} -I${fmoddir}

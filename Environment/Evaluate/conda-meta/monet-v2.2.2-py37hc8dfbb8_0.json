@@ -1,0 +1,320 @@
+{
+  "build": "py37hc8dfbb8_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "cartopy",
+    "dask",
+    "matplotlib-base",
+    "numpy",
+    "pandas",
+    "pydecorate",
+    "pyresample",
+    "python >=3.7,<3.8.0a0",
+    "python-stratify",
+    "python_abi 3.7.* *_cp37m",
+    "seaborn",
+    "xarray",
+    "xesmf"
+  ],
+  "extracted_package_dir": "/home/cayang/anaconda3/pkgs/monet-v2.2.2-py37hc8dfbb8_0",
+  "features": "",
+  "files": [
+    "lib/python3.7/site-packages/monet-2.2.2.dist-info/INSTALLER",
+    "lib/python3.7/site-packages/monet-2.2.2.dist-info/LICENSE",
+    "lib/python3.7/site-packages/monet-2.2.2.dist-info/METADATA",
+    "lib/python3.7/site-packages/monet-2.2.2.dist-info/RECORD",
+    "lib/python3.7/site-packages/monet-2.2.2.dist-info/WHEEL",
+    "lib/python3.7/site-packages/monet-2.2.2.dist-info/top_level.txt",
+    "lib/python3.7/site-packages/monet/__init__.py",
+    "lib/python3.7/site-packages/monet/__pycache__/__init__.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/__pycache__/met_funcs.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/__pycache__/monet_accessor.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/met_funcs.py",
+    "lib/python3.7/site-packages/monet/monet_accessor.py",
+    "lib/python3.7/site-packages/monet/plots/__init__.py",
+    "lib/python3.7/site-packages/monet/plots/__pycache__/__init__.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/plots/__pycache__/colorbars.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/plots/__pycache__/mapgen.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/plots/__pycache__/plots.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/plots/__pycache__/taylordiagram.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/plots/colorbars.py",
+    "lib/python3.7/site-packages/monet/plots/mapgen.py",
+    "lib/python3.7/site-packages/monet/plots/plots.py",
+    "lib/python3.7/site-packages/monet/plots/taylordiagram.py",
+    "lib/python3.7/site-packages/monet/util/__init__.py",
+    "lib/python3.7/site-packages/monet/util/__pycache__/__init__.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/util/__pycache__/combinetool.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/util/__pycache__/interp_util.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/util/__pycache__/resample.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/util/__pycache__/stats.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/util/__pycache__/tools.cpython-37.pyc",
+    "lib/python3.7/site-packages/monet/util/combinetool.py",
+    "lib/python3.7/site-packages/monet/util/interp_util.py",
+    "lib/python3.7/site-packages/monet/util/resample.py",
+    "lib/python3.7/site-packages/monet/util/stats.py",
+    "lib/python3.7/site-packages/monet/util/tools.py"
+  ],
+  "fn": "monet-v2.2.2-py37hc8dfbb8_0.tar.bz2",
+  "license": "MIT",
+  "license_family": "MIT",
+  "link": {
+    "source": "/home/cayang/anaconda3/pkgs/monet-v2.2.2-py37hc8dfbb8_0",
+    "type": 1
+  },
+  "md5": "d4cfede8c9c4e74be3ee0796b5fdf240",
+  "name": "monet",
+  "package_tarball_full_path": "/home/cayang/anaconda3/pkgs/monet-v2.2.2-py37hc8dfbb8_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.7/site-packages/monet-2.2.2.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet-2.2.2.dist-info/LICENSE",
+        "path_type": "hardlink",
+        "sha256": "87fcabb0120c982fdf4b6f47aba27410ab53de73126d8414189ffa2e7064de67",
+        "sha256_in_prefix": "87fcabb0120c982fdf4b6f47aba27410ab53de73126d8414189ffa2e7064de67",
+        "size_in_bytes": 1722
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet-2.2.2.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "fa44380d1f94a31348ea67b6fb32f071d22408c61e72cc17e583080c3f5061e0",
+        "sha256_in_prefix": "fa44380d1f94a31348ea67b6fb32f071d22408c61e72cc17e583080c3f5061e0",
+        "size_in_bytes": 635
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet-2.2.2.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "06486a3eadaca29cbb6d551c9fd3165edff9361921af9a91c58a8698854afc08",
+        "sha256_in_prefix": "06486a3eadaca29cbb6d551c9fd3165edff9361921af9a91c58a8698854afc08",
+        "size_in_bytes": 2285
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet-2.2.2.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "8389ccb3b77e5e5f7ec42f57a2f52bb031c65edf854f4135ed8aa8f760c47ef6",
+        "sha256_in_prefix": "8389ccb3b77e5e5f7ec42f57a2f52bb031c65edf854f4135ed8aa8f760c47ef6",
+        "size_in_bytes": 92
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet-2.2.2.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "a5c3bdf737e7cf1c4ce6b5d179d505b8d4df5af530bbe48876f5679ff973b0e8",
+        "sha256_in_prefix": "a5c3bdf737e7cf1c4ce6b5d179d505b8d4df5af530bbe48876f5679ff973b0e8",
+        "size_in_bytes": 6
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "1354acd68327780b9a3f6767a3ea620204cef3f84fddd83c9d30e0559a8a9b86",
+        "sha256_in_prefix": "1354acd68327780b9a3f6767a3ea620204cef3f84fddd83c9d30e0559a8a9b86",
+        "size_in_bytes": 286
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "cd89fb12aff1e5bf9545e11ee050d1bd093333e54b195cabdeef752ca477ddf0",
+        "sha256_in_prefix": "cd89fb12aff1e5bf9545e11ee050d1bd093333e54b195cabdeef752ca477ddf0",
+        "size_in_bytes": 416
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/__pycache__/met_funcs.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "acfc051fc8c95ca551ebe13112ab759957ec33436b2122fd7767b725f8548f80",
+        "sha256_in_prefix": "acfc051fc8c95ca551ebe13112ab759957ec33436b2122fd7767b725f8548f80",
+        "size_in_bytes": 14804
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/__pycache__/monet_accessor.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "4c9e684d7dd59f95e22648a879fec3275d909f5f57526e9d47527173edd9f3f5",
+        "sha256_in_prefix": "4c9e684d7dd59f95e22648a879fec3275d909f5f57526e9d47527173edd9f3f5",
+        "size_in_bytes": 48766
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/met_funcs.py",
+        "path_type": "hardlink",
+        "sha256": "6a5fd48b3e7a84ef15bc9c7678fcb03d78c0a8e16638b84c40b9ffac9272ae91",
+        "sha256_in_prefix": "6a5fd48b3e7a84ef15bc9c7678fcb03d78c0a8e16638b84c40b9ffac9272ae91",
+        "size_in_bytes": 16694
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/monet_accessor.py",
+        "path_type": "hardlink",
+        "sha256": "e24c786105691668b22cecc7646d9d9fcefbdf84e97cf11be7fcef037460bc05",
+        "sha256_in_prefix": "e24c786105691668b22cecc7646d9d9fcefbdf84e97cf11be7fcef037460bc05",
+        "size_in_bytes": 66948
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "8c1cb4dc7faf4b897abb7fbbc4ca0fb2c3d558329d8648423a88208527384022",
+        "sha256_in_prefix": "8c1cb4dc7faf4b897abb7fbbc4ca0fb2c3d558329d8648423a88208527384022",
+        "size_in_bytes": 4216
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "62a3de0318fbf48ef7a87b327537c6e4ba6f42a2b87f91b67b39a2bcb21381df",
+        "sha256_in_prefix": "62a3de0318fbf48ef7a87b327537c6e4ba6f42a2b87f91b67b39a2bcb21381df",
+        "size_in_bytes": 3342
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/__pycache__/colorbars.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "9a6e6e1746b8812678cae6e1e17d6b5c8b3b90372ac0a9d585ed4049ed7efe91",
+        "sha256_in_prefix": "9a6e6e1746b8812678cae6e1e17d6b5c8b3b90372ac0a9d585ed4049ed7efe91",
+        "size_in_bytes": 2088
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/__pycache__/mapgen.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "f539452b4da2d4ad0a149e9a73e4e479a4af3d3b1f3d09b7be3fe96310213186",
+        "sha256_in_prefix": "f539452b4da2d4ad0a149e9a73e4e479a4af3d3b1f3d09b7be3fe96310213186",
+        "size_in_bytes": 2044
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/__pycache__/plots.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "a54ee3129f3b4a0a46888993fd69d82ccdb519d104280abdac978c173137156f",
+        "sha256_in_prefix": "a54ee3129f3b4a0a46888993fd69d82ccdb519d104280abdac978c173137156f",
+        "size_in_bytes": 8919
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/__pycache__/taylordiagram.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "c47b9b38a05c357fcbec786da0d5aa00cc8c53adfebb9caf4c5333ad3f9084cc",
+        "sha256_in_prefix": "c47b9b38a05c357fcbec786da0d5aa00cc8c53adfebb9caf4c5333ad3f9084cc",
+        "size_in_bytes": 3685
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/colorbars.py",
+        "path_type": "hardlink",
+        "sha256": "557a9dce488d4181d036c77acc8f501a10625651fd8ea11f8997ff6049ed4cb0",
+        "sha256_in_prefix": "557a9dce488d4181d036c77acc8f501a10625651fd8ea11f8997ff6049ed4cb0",
+        "size_in_bytes": 7211
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/mapgen.py",
+        "path_type": "hardlink",
+        "sha256": "47b29b3cd93b4f6d7b7b66d31c07385cd32d31e86fa4f951b9303909daf48b4a",
+        "sha256_in_prefix": "47b29b3cd93b4f6d7b7b66d31c07385cd32d31e86fa4f951b9303909daf48b4a",
+        "size_in_bytes": 2564
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/plots.py",
+        "path_type": "hardlink",
+        "sha256": "83e40cf02faf8f8a1f3a83ca9130ae43a8d8391bf22d994b600f224cfda6708b",
+        "sha256_in_prefix": "83e40cf02faf8f8a1f3a83ca9130ae43a8d8391bf22d994b600f224cfda6708b",
+        "size_in_bytes": 12375
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/plots/taylordiagram.py",
+        "path_type": "hardlink",
+        "sha256": "6e92729c9b27c68820152d56d60d3b88c523f6f1fa819a0b9239c46b944ee576",
+        "sha256_in_prefix": "6e92729c9b27c68820152d56d60d3b88c523f6f1fa819a0b9239c46b944ee576",
+        "size_in_bytes": 5925
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "07a1f6cd1dfc996ec4567795e712172b6197679730b58a62ff810cc4917368d1",
+        "sha256_in_prefix": "07a1f6cd1dfc996ec4567795e712172b6197679730b58a62ff810cc4917368d1",
+        "size_in_bytes": 8090
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "8876d3bdbd3634c4841d1bdf879e4b8e1a956fc0531d27cefdba7c9009da8b91",
+        "sha256_in_prefix": "8876d3bdbd3634c4841d1bdf879e4b8e1a956fc0531d27cefdba7c9009da8b91",
+        "size_in_bytes": 7466
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/__pycache__/combinetool.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "e10da2e8f045ffa6b62457259ee8335a2dd978aed0b9c82b9ee1c54198404757",
+        "sha256_in_prefix": "e10da2e8f045ffa6b62457259ee8335a2dd978aed0b9c82b9ee1c54198404757",
+        "size_in_bytes": 5797
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/__pycache__/interp_util.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "1a1a8767f03be68df230c7227a15e056a3e000c7bde7ba3177d698d9a322f4da",
+        "sha256_in_prefix": "1a1a8767f03be68df230c7227a15e056a3e000c7bde7ba3177d698d9a322f4da",
+        "size_in_bytes": 4834
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/__pycache__/resample.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "f9984f645cd9b83ed675440c4b7379f378d3a76d79f254948074b55b32857f98",
+        "sha256_in_prefix": "f9984f645cd9b83ed675440c4b7379f378d3a76d79f254948074b55b32857f98",
+        "size_in_bytes": 3344
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/__pycache__/stats.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "7b97eb3cbebcf5971ac1c48f13ff5baf85aaa484f526ba504bcce1b3c65c7a8a",
+        "sha256_in_prefix": "7b97eb3cbebcf5971ac1c48f13ff5baf85aaa484f526ba504bcce1b3c65c7a8a",
+        "size_in_bytes": 40150
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/__pycache__/tools.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "1a0cc8c3f7b10e5aa02b3ae3c07677a4b1419edfd750d4aa13fb37dd9ae92dae",
+        "sha256_in_prefix": "1a0cc8c3f7b10e5aa02b3ae3c07677a4b1419edfd750d4aa13fb37dd9ae92dae",
+        "size_in_bytes": 7931
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/combinetool.py",
+        "path_type": "hardlink",
+        "sha256": "176124eb8b82f0be053668bc45e50f4c4598f73ece601000a7d453a9d605f318",
+        "sha256_in_prefix": "176124eb8b82f0be053668bc45e50f4c4598f73ece601000a7d453a9d605f318",
+        "size_in_bytes": 74978
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/interp_util.py",
+        "path_type": "hardlink",
+        "sha256": "e756c1e0cb4aa62ce8363ba884ef1d5f1ba96d09b2c866f1fb2cb42602849f87",
+        "sha256_in_prefix": "e756c1e0cb4aa62ce8363ba884ef1d5f1ba96d09b2c866f1fb2cb42602849f87",
+        "size_in_bytes": 4774
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/resample.py",
+        "path_type": "hardlink",
+        "sha256": "3c0cd0d6c37ab99c5ed779b93986353db400c9c638d66f6dbd162f6d391ea060",
+        "sha256_in_prefix": "3c0cd0d6c37ab99c5ed779b93986353db400c9c638d66f6dbd162f6d391ea060",
+        "size_in_bytes": 3647
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/stats.py",
+        "path_type": "hardlink",
+        "sha256": "62dcfbaae62f767aae0826de444b3ebe429de2824d93184ee337a662de388404",
+        "sha256_in_prefix": "62dcfbaae62f767aae0826de444b3ebe429de2824d93184ee337a662de388404",
+        "size_in_bytes": 37395
+      },
+      {
+        "_path": "lib/python3.7/site-packages/monet/util/tools.py",
+        "path_type": "hardlink",
+        "sha256": "ecf2f7e38e9b2968717aff581321b34cde00d335afe7ed42e540d798f5e4d4aa",
+        "sha256_in_prefix": "ecf2f7e38e9b2968717aff581321b34cde00d335afe7ed42e540d798f5e4d4aa",
+        "size_in_bytes": 8195
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "monet==v2.2.2=py37hc8dfbb8_0",
+  "sha256": "ccff45b0334db0b584360d09f6f050093ae267a9e257c54c67ed39090c451732",
+  "size": 75944,
+  "subdir": "linux-64",
+  "timestamp": 1587757613799,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/monet-v2.2.2-py37hc8dfbb8_0.tar.bz2",
+  "version": "v2.2.2"
+}

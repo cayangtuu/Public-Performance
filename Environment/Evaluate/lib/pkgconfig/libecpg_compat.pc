@@ -1,0 +1,9 @@
+Name: libecpg_compat
+Description: PostgreSQL libecpg_compat library
+Url: http://www.postgresql.org/
+Version: 12.3
+Requires: 
+Requires.private: libecpg libpgtypes
+Cflags: -I/home/cayang/anaconda3/envs/Evaluate/include
+Libs: -L/home/cayang/anaconda3/envs/Evaluate/lib -lecpg_compat
+Libs.private: -L/home/cayang/anaconda3/envs/Evaluate/lib -lm

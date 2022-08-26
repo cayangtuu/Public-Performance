@@ -1,0 +1,35 @@
+{
+  "build": "1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "seaborn-base >=0.10.1,<0.10.2.0a0",
+    "statsmodels >=0.8.0"
+  ],
+  "extracted_package_dir": "/home/cayang/anaconda3/pkgs/seaborn-0.10.1-1",
+  "features": "",
+  "files": [],
+  "fn": "seaborn-0.10.1-1.tar.bz2",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/home/cayang/anaconda3/pkgs/seaborn-0.10.1-1",
+    "type": 1
+  },
+  "md5": "3e824a543087e5bd952d671e9ec4c4b2",
+  "name": "seaborn",
+  "package_tarball_full_path": "/home/cayang/anaconda3/pkgs/seaborn-0.10.1-1.tar.bz2",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "seaborn==0.10.1=1",
+  "sha256": "8578a891e8ac1e8973ac092831e1cf46df1cc308ef6acc09b55d4cf6500289f8",
+  "size": 4070,
+  "subdir": "linux-64",
+  "timestamp": 1591878858955,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/seaborn-0.10.1-1.tar.bz2",
+  "version": "0.10.1"
+}

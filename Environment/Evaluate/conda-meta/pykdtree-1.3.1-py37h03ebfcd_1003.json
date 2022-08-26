@@ -1,0 +1,126 @@
+{
+  "build": "py37h03ebfcd_1003",
+  "build_number": 1003,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.3.0",
+    "numpy >=1.14.6,<2.0a0",
+    "python >=3.7,<3.8.0a0",
+    "python_abi 3.7.* *_cp37m"
+  ],
+  "extracted_package_dir": "/home/cayang/anaconda3/pkgs/pykdtree-1.3.1-py37h03ebfcd_1003",
+  "features": "",
+  "files": [
+    "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/INSTALLER",
+    "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/LICENSE.txt",
+    "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/METADATA",
+    "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/RECORD",
+    "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/WHEEL",
+    "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/top_level.txt",
+    "lib/python3.7/site-packages/pykdtree/__init__.py",
+    "lib/python3.7/site-packages/pykdtree/__pycache__/__init__.cpython-37.pyc",
+    "lib/python3.7/site-packages/pykdtree/__pycache__/test_tree.cpython-37.pyc",
+    "lib/python3.7/site-packages/pykdtree/kdtree.cpython-37m-x86_64-linux-gnu.so",
+    "lib/python3.7/site-packages/pykdtree/test_tree.py"
+  ],
+  "fn": "pykdtree-1.3.1-py37h03ebfcd_1003.tar.bz2",
+  "license": "LGPL-3.0",
+  "link": {
+    "source": "/home/cayang/anaconda3/pkgs/pykdtree-1.3.1-py37h03ebfcd_1003",
+    "type": 1
+  },
+  "md5": "9cc8f6bb163559dea6c677b0f467571c",
+  "name": "pykdtree",
+  "package_tarball_full_path": "/home/cayang/anaconda3/pkgs/pykdtree-1.3.1-py37h03ebfcd_1003.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/INSTALLER",
+        "path_type": "hardlink",
+        "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "sha256_in_prefix": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+        "size_in_bytes": 5
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/LICENSE.txt",
+        "path_type": "hardlink",
+        "sha256": "885291b849b09c30262a7fdc5576d6099394d2c491866b8e4cdfe9ce95e8cfc9",
+        "sha256_in_prefix": "885291b849b09c30262a7fdc5576d6099394d2c491866b8e4cdfe9ce95e8cfc9",
+        "size_in_bytes": 7657
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/METADATA",
+        "path_type": "hardlink",
+        "sha256": "46a883b062fb167ab2e5d123fc815061e3a4d41c10155a8d06fbfcf3972f8527",
+        "sha256_in_prefix": "46a883b062fb167ab2e5d123fc815061e3a4d41c10155a8d06fbfcf3972f8527",
+        "size_in_bytes": 636
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/RECORD",
+        "path_type": "hardlink",
+        "sha256": "f8bd52095b2d0cf4292fa9601b0db0e9821329b1ee0c0e8052c4102609653961",
+        "sha256_in_prefix": "f8bd52095b2d0cf4292fa9601b0db0e9821329b1ee0c0e8052c4102609653961",
+        "size_in_bytes": 847
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/WHEEL",
+        "path_type": "hardlink",
+        "sha256": "f5c1b1c10ded4d3ec602c74708f1aa2e2eb50d71a92565642eb7a7dcc42e0f49",
+        "sha256_in_prefix": "f5c1b1c10ded4d3ec602c74708f1aa2e2eb50d71a92565642eb7a7dcc42e0f49",
+        "size_in_bytes": 104
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree-1.3.1.dist-info/top_level.txt",
+        "path_type": "hardlink",
+        "sha256": "13aa848eee6870c07a8eebb68f453b025116d679241c0e96eff37b1fbd99d1e4",
+        "sha256_in_prefix": "13aa848eee6870c07a8eebb68f453b025116d679241c0e96eff37b1fbd99d1e4",
+        "size_in_bytes": 9
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree/__init__.py",
+        "path_type": "hardlink",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sha256_in_prefix": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size_in_bytes": 0
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree/__pycache__/__init__.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "bb97dcd4f022d6a36ec7b4f7c61d44e4dba4d6e2c054f8d39a1d45faae2a15c5",
+        "sha256_in_prefix": "bb97dcd4f022d6a36ec7b4f7c61d44e4dba4d6e2c054f8d39a1d45faae2a15c5",
+        "size_in_bytes": 135
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree/__pycache__/test_tree.cpython-37.pyc",
+        "path_type": "hardlink",
+        "sha256": "1c74ac3cf00aa2131a20b186eec2cb33e1693c7c11ace5370ae9f32bcb6e188f",
+        "sha256_in_prefix": "1c74ac3cf00aa2131a20b186eec2cb33e1693c7c11ace5370ae9f32bcb6e188f",
+        "size_in_bytes": 12410
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree/kdtree.cpython-37m-x86_64-linux-gnu.so",
+        "path_type": "hardlink",
+        "sha256": "01bcd5b8c1bf901ccb7e41f25dfb2d88b1ae024eee0b579a6dce07048f807838",
+        "sha256_in_prefix": "01bcd5b8c1bf901ccb7e41f25dfb2d88b1ae024eee0b579a6dce07048f807838",
+        "size_in_bytes": 125880
+      },
+      {
+        "_path": "lib/python3.7/site-packages/pykdtree/test_tree.py",
+        "path_type": "hardlink",
+        "sha256": "b7a2f520aeaa94c133aca7038af54943c4bf6ed79d9acde90d50c55ec81b59ff",
+        "sha256_in_prefix": "b7a2f520aeaa94c133aca7038af54943c4bf6ed79d9acde90d50c55ec81b59ff",
+        "size_in_bytes": 14984
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "pykdtree==1.3.1=py37h03ebfcd_1003",
+  "sha256": "7a0a8d8dda5a283aa89d2690d1fa85da9b71ab9f1994c28921803420de7531ab",
+  "size": 65951,
+  "subdir": "linux-64",
+  "timestamp": 1584966136575,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/pykdtree-1.3.1-py37h03ebfcd_1003.tar.bz2",
+  "version": "1.3.1"
+}
