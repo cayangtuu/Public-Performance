@@ -1,5 +1,7 @@
 import pandas as pd
 import xarray as xr
+import chardet
+from pathlib import Path
 from monetio.models import cmaq
 from monet.util import tools
  
@@ -59,8 +61,8 @@ def sim_readhr(cmaqFil, gridFil, stFil, ssList, var, RgTT):
 
 
    def stInfo(stFil, st):
-#     stinfo = pd.read_csv(stFil, encoding ='utf-8-sig')
-      stinfo = pd.read_csv(stFil, encoding ='big5')
+      encoding = chardet.detect(Path(stFil).read_bytes()).get("encoding")
+      stinfo = pd.read_csv(stFil, encoding=encoding)
       stData = stinfo.iloc[:, 2:]
       stData = stData.set_index('ch_name', drop=True)
       lat = stData.loc[st, 'lat']
@@ -89,8 +91,9 @@ def sim_readhr(cmaqFil, gridFil, stFil, ssList, var, RgTT):
    return df
 
 def obs_readhr(ObsDir, RgTT, ssList, var):
-   EPAData = pd.read_csv(ObsDir + '/' + RgTT[0][:4] + var +'_PerHour.csv',
-                         encoding='utf-8-sig', index_col=0)
+   obsFil = ObsDir + '/' + RgTT[0][:4] + var +'_PerHour.csv'
+   encoding = chardet.detect(Path(obsFil).read_bytes()).get("encoding")
+   EPAData = pd.read_csv(obsFil, encoding=encoding, index_col=0)
 
    mask = (EPAData.index >= RgTT[0]) & (EPAData.index <= RgTT[1])
    EPAData = EPAData.loc[mask]

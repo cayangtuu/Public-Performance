@@ -1,7 +1,5 @@
 import pandas as pd
-import csv
 import os, sys
-import time
 import datetime, calendar
 from Lib.simobs_readhr import sim_readhr, obs_readhr
 from Lib.Evaluate import evaluate
@@ -21,7 +19,7 @@ if (YY != '2019'):
     print("！！！模擬年份請輸入'2019'！！！")
     sys.exit()
 
-nowTT = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+nowTT = pd.Timestamp.now().strftime('%Y-%m-%d-%H-%M-%S')
 
 rootDir = os.getcwd()
 workDir = os.path.join(rootDir, 'Data', 'Evaluate', nowTT+ '_For' +keyTime)
@@ -31,7 +29,7 @@ except FileExistsError:
    pass
 
 
-domain = {'東亞'  : ['首爾', '東京', '北京']}
+domain = {'EastAsia'  : ['首爾', '東京', '北京']}
 allVars = ['T2', 'WS', 'WD']
 
 for area in domain:

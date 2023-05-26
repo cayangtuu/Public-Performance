@@ -14,27 +14,23 @@ register_matplotlib_converters()
 
 
 class plotSimObs():
-    def __init__(self, stInfo, obs, sim):
+    def __init__(self, nowTT, stInfo, obs, sim):
         self.obsDf = obs
         self.simDf = sim
         self.stName = stInfo['st']
         self.stID = stInfo['stID']
-        self.enName = stInfo['enName']
         self.area = stInfo['area']
+        self.nowTT = nowTT
 
-    def plot(self, spcs, dateRange, type):
+    def plot(self, spcs, dateRange, O3PM, type):
         seaborn.set(font_scale=1.8)
-        seaborn.set_style("whitegrid")
-        seaborn.axes_style("whitegrid")
+        seaborn.set_style("whitegrid", {'axes.edgecolor':'black'})
 
 
         if type == 'timeseries':
-            fig, ax = plt.subplots(len(spcs), 1, 
-                                   figsize=(8.27 * 2, 11.69 * 2), constrained_layout = True)
+            fig, ax = plt.subplots(4, 1, figsize=(8.27*2, 11.69*1.2))
         elif type == 'scatter':
-            fig, ax = plt.subplots(2, int(len(spcs)/2)+1,
-                                   figsize=(11.69 * 2, 6.0 * 2), constrained_layout=True)
-                                  #figsize=(11.69 * 2, 8.27 * 2), constrained_layout=True)
+            fig, ax = plt.subplots(1, 4, figsize=(11.69 * 2, 6.0))
         else:
             raise KeyError
 
@@ -91,46 +87,38 @@ class plotSimObs():
                                  fontproperties=zhfont)
 
             elif type == 'scatter':
-                ax[ii % 2, int(ii / 2)].set_xlim([0, Clmax])
-                ax[ii % 2, int(ii / 2)].set_ylim([0, Clmax])
-                ax[ii % 2, int(ii / 2)].set_aspect('equal', adjustable='box')
-                ax[ii % 2, int(ii / 2)].set_xticks(np.arange(0, Clmax*1.1, Clmax/5))
-                ax[ii % 2, int(ii / 2)].set_yticks(np.arange(0, Clmax*1.1, Clmax/5))
-                ax[ii % 2, int(ii / 2)].set_xlabel(u'觀測 ' + spcun, fontsize='medium', fontproperties=zhfont)
-                ax[ii % 2, int(ii / 2)].set_ylabel(u'模擬 ' + spcun, fontsize='medium', fontproperties=zhfont)
+                ax[ii].set_xlim([0, Clmax])
+                ax[ii].set_ylim([0, Clmax])
+                ax[ii].set_aspect('equal', adjustable='box')
+                ax[ii].set_xticks(np.arange(0, Clmax*1.1, Clmax/5))
+                ax[ii].set_yticks(np.arange(0, Clmax*1.1, Clmax/5))
+                ax[ii].set_xlabel(u'觀測 ' + spcun, fontsize='medium', fontproperties=zhfont)
+                ax[ii].set_ylabel(u'模擬 ' + spcun, fontsize='medium', fontproperties=zhfont)
 
-                ax[ii % 2, int(ii / 2)].scatter(mergeDF['obs'], mergeDF['sim'],
+                ax[ii].scatter(mergeDF['obs'], mergeDF['sim'],
                                                 label=spcs, color='k', s=20)
-                ax[ii % 2, int(ii / 2)].plot(np.arange(10*maxVal), np.arange(10*maxVal),
+                ax[ii].plot(np.arange(10*maxVal), np.arange(10*maxVal),
                                              color='k', linestyle='-')
-                ax[ii % 2, int(ii / 2)].set_title(self.stName + '_' + spcnm + ' ' + spctm + '_' +
+                ax[ii].set_title(self.stName + '_' + spcnm + ' ' + spctm + '_' +
                                                   dateRange[0].strftime('%Y/%m'),
                                                   fontproperties=zhfont)
 
             else:
                 raise KeyError
 
-        if type == 'scatter':
-           ax[1, 3].remove()
-           if (len(spcs) == 6):
-             ax[0, 3].remove()
+        if (len(spcs) <= 3):
+           [plt.delaxes(ax[ii]) for ii in range(len(spcs), 4)]
 
-#           plt.tight_layout()
+        plt.tight_layout()
 
 
-
-        # if True:  ###True(不要印出來)
-        if False:  ###False(將檔案印出來)
-            plt.show()
-            systime.sleep(2)
-        else:
-            outDir = os.path.join('Output', 'output_'+type, 
-                                      dateRange[0].strftime('%Y-%m'), self.area)
-            try:
-                os.makedirs(outDir)
-            except FileExistsError:
-                pass
-            strStID = '{:03d}'.format(self.stID)
-            picFil = os.path.join(outDir, strStID + self.stName + dateRange[0].strftime('%Y%m'))
-            plt.savefig(picFil + '.png')
-            plt.close()
+        outDir = os.path.join('Output', 'output_'+type, 
+                               self.nowTT+ '_For' +dateRange[0].strftime('%Y-%m'), self.area, O3PM)
+        try:
+            os.makedirs(outDir)
+        except FileExistsError:
+            pass
+        strStID = '{:03d}'.format(self.stID)
+        picFil = os.path.join(outDir, strStID + self.stName + dateRange[0].strftime('%Y%m'))
+        plt.savefig(picFil + '.png')
+        plt.close()

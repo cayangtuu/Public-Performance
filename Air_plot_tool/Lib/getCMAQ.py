@@ -1,5 +1,7 @@
 import pandas as pd
 import xarray as xr
+import chardet
+from pathlib import Path
 from monetio.models import cmaq
 from monet.util import tools
 
@@ -13,6 +15,7 @@ class getCMAQ():
         grid = xr.open_dataset(gridFil).sel(TSTEP=0, LAY=0)
         tmp = self.CMAQData.update({'latitude': grid.LAT,
                                     'longitude': grid.LON})
+        self.CMAQData = self.CMAQData.rename({'COL': 'x', 'ROW': 'y'})
 
     def getCMAQst(self, lat, lon, vars):
         df = pd.DataFrame()
@@ -26,7 +29,8 @@ class getCMAQ():
         return df
 
     def stInfo(self, stFil, st):
-        stData = pd.read_csv(stFil, encoding='utf-8-sig', index_col='ch_name')
+        encoding = chardet.detect(Path(stFil).read_bytes()).get("encoding")
+        stData = pd.read_csv(stFil, encoding=encoding, index_col='ch_name')
         st_info = {'st': st, 'stID':stData.loc[st, 'stID'], 'enName':stData.loc[st, 'en_name'], 
                    'lat':stData.loc[st, 'lat'], 'lon':stData.loc[st, 'lon']}       
         return st_info
@@ -38,10 +42,10 @@ class getCMAQ():
         return tmpData
 
     def _open_dataset(self,fname,
-                     earth_radius=6370000,
-                     convert_to_ppb=True,
-                     drop_duplicates=False,
-                     **kwargs):
+                      earth_radius=6370000,
+                      convert_to_ppb=True,
+                      drop_duplicates=False,
+                      **kwargs):
         """Method to open CMAQ IOAPI netcdf files.
 
         Parameters
@@ -66,12 +70,13 @@ class getCMAQ():
         # get the grid information
         grid = cmaq.grid_from_dataset(dset, earth_radius=earth_radius)
         area_def = cmaq.get_ioapi_pyresample_area_def(dset, grid)
+
         # assign attributes for dataset and all DataArrays
         dset = dset.assign_attrs({'proj4_srs': grid})
         for i in dset.variables:
-            dset[i] = dset[i].assign_attrs({'proj4_srs': grid})
-            for j in dset[i].attrs:
-                dset[i].attrs[j] = dset[i].attrs[j].strip()
+           dset[i] = dset[i].assign_attrs({'proj4_srs': grid})
+           for j in dset[i].attrs:
+               dset[i].attrs[j] = dset[i].attrs[j].strip()
 
         # get the times
         dset = cmaq._get_times(dset, drop_duplicates=drop_duplicates)
@@ -79,11 +84,10 @@ class getCMAQ():
         # get the lat lon
         dset = cmaq._get_latlon(dset, area_def)
 
-        # get Predefined mapping tables for observations
-        # dset = _predefined_mapping_tables(dset)
 
         # rename dimensions
         dset = dset.rename({'COL': 'x', 'ROW': 'y', 'LAY': 'z'})
+
         # convert all gas species to ppbv
         if convert_to_ppb:
             for i in dset.variables:

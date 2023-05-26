@@ -1,6 +1,5 @@
 import pandas as pd
-import os, sys
-import datetime, calendar
+import os, sys, calendar
 from Lib.Evaluate import Evaluate
 from Lib.simobs_hr2day import simobs_hr2day
 from Lib.simobs_readhr import sim_readhr, obs_readhr
@@ -20,15 +19,24 @@ if (YY != '2019'):
     print("！！！模擬年份請輸入'2019'！！！")
     sys.exit()
 
-nowTT = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
+
+nowTT = pd.Timestamp.now().strftime('%Y-%m-%d-%H-%M-%S')
 
 ##資料夾配置
 workDir = os.path.join(os.getcwd(), 'Data', 'Evaluate', nowTT+ '_For' +keyTime )
 ObsDir  = os.path.join(os.getcwd(), 'Data', 'Obs')
 SimDir  = os.path.join(os.getcwd(), 'Data', 'Sim')
-cmaqFil = os.path.join(SimDir, 'cctm', 'v4.d2.'+keyTime+'.conc.nc')
 gridFil = os.path.join(SimDir, 'mcip', 'GRIDCRO2D_Taiwan.nc')
 stFil   = os.path.join(SimDir, 'st.csv')
+
+cmaqFilNm = input("請輸入欲計算性能評估之模擬檔案名稱，ex:v1.d2.2019-01.conc.nc : ") 
+cmaqFil = os.path.join(SimDir, 'cctm', cmaqFilNm)
+if os.path.isfile(cmaqFil):
+  pass
+else:
+  print("檔案不存在，請確認輸入檔案名稱是否正確 ! ! !")
+  sys.exit()
+
 
 AirQ_Area = {'EastAsia': ['首爾', '東京', '北京']}
 
@@ -53,12 +61,6 @@ for area in AirQ_Area:
                sim_PH_o3MB = sim_PH
             else:
                ND = 10.e-10
-#           elif (var == 'NMHC'):
-#              ND = 50.
-#           elif (var == 'NO2') or (var == 'SO2'):
-#              ND = 0.5
-#           elif (var == 'PM25') or (var == 'PM10'):
-#              ND = 5.
             obs_PH = obs_PH.where(obs_PH >= ND, -999.)
             sim_PH = sim_PH.where(obs_PH >= ND, -999.)
 

@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
-import os, calendar
+import os, sys, calendar
 from Lib import getData, calData, CountyDict, plot2D
 
 ###時間格式設定
 try:
-    keyTime = input("請輸入增量模擬月份，ex:2019-01 : ")
+    keyTime = input("請輸入'計算增量前後模擬濃度差值'月份，ex:2019-01 : ")
     YY, MM = keyTime.split('-')
     LM = calendar.monthrange(int(YY), int(MM))[1]
     start = keyTime + '-01-00'
@@ -18,17 +18,34 @@ if (YY != '2019'):
     print("！！！模擬年份請輸入'2019'！！！")
     sys.exit()
 
+
 nowTT = pd.Timestamp.now().strftime('%Y-%m-%d-%H-%M-%S')
 
 
 ###資料夾與檔案名稱設定
 SimDir = os.path.join(os.getcwd(), 'Data', 'Sim')
-BaseFil = os.path.join(SimDir, 'Base', 'v1.2019-01.conc.nc')     #Before檔案名稱
-CaseFil = os.path.join(SimDir, 'Case', 'c-v1.2019-01.conc.nc')   #After 檔案名稱
 gridFil = os.path.join(SimDir, 'mcip', 'GRIDCRO2D_Taiwan.nc')
 CountyFil = os.path.join(SimDir, 'CountyDict', 'CountyDict.csv') #網格所屬縣市檔案名稱
 stFil = os.path.join(SimDir, 'st.csv')                           #測站經緯度檔案名稱(有再加入)
 
+
+###使用者自行輸入Before及After 檔案名稱
+def FileExists(Fil):
+   if os.path.isfile(Fil):
+     pass
+   else:
+     print("檔案不存在，請確認輸入檔案名稱是否正確 ! ! !")
+     sys.exit()
+   return
+BaseFilNm = input("請輸入Base之增量前模擬檔案名稱，ex:v1.2019-01.conc.nc : ")
+BaseFil = os.path.join(SimDir, 'Base', BaseFilNm)       #Before檔案名稱
+FileExists(BaseFil)
+CaseFilNm = input("請輸入Case之增量後模擬檔案名稱，ex:c-v1.2019-01.conc.nc : ")
+CaseFil = os.path.join(SimDir, 'Case', CaseFilNm)       #After 檔案名稱
+FileExists(CaseFil)
+
+
+###創建輸出檔案之資料夾
 OutDir = os.path.join(os.getcwd(), 'Data', 'Evaluate', nowTT+'_For'+keyTime)
 plotDir = os.path.join(OutDir, 'plot2D')
 try:
@@ -36,6 +53,7 @@ try:
    os.makedirs(plotDir)
 except FileExistsError:
    pass
+
 
 ###物種設定
 Vars = ['PM10', 'PM25', 'SO2', 'NO2', 'O3']
@@ -54,13 +72,13 @@ def Grd2LL(DF, Lat, Lon, PFCN, Unit):
             '緯度':Lat.values.reshape(-1),\
             PFCN+Unit:DF['Inc'].reshape(-1),\
             '背景模擬濃度'+Unit:DF['Before'].reshape(-1),\
-            '增/減量後模擬濃度'+Unit:DF['After'].reshape(-1)})
+            '增量後模擬濃度'+Unit:DF['After'].reshape(-1)})
    return LLData
 
 ##由List轉為每個網格點經緯度資料
 def List2LL(CtyDF, PFCN, Unit):
    columns = ['縣市', '經度', '緯度', PFCN+Unit, \
-              '背景模擬濃度'+Unit, '增/減量後模擬濃度'+Unit]
+              '背景模擬濃度'+Unit, '增量後模擬濃度'+Unit]
    LLData = pd.DataFrame(CtyDF, \
                          columns = columns, \
                          dtype = np.object)
@@ -90,12 +108,15 @@ for var in Vars:
    if (var == 'O3'):
       PerForm = ['HourMax', 'ETHourMax']
       PerForCN = ['最大小時平均值差值', '八小時平均值差值']
+      PerForEN = ['MaxHourlyAvg', '8HourAvg']
    elif (var == 'PM25') or (var == 'PM10'):
       PerForm = ['DayMean', 'YearMean']
       PerForCN = ['日平均值差值', '年平均值差值']
+      PerForEN = ['DailyAvg', 'AnnualMean']
    else:
       PerForm = ['HourMax', 'YearMean']
       PerForCN = ['最大小時平均值差值', '年平均值差值']
+      PerForEN = ['MaxHourlyAvg', 'AnnualMean']
 
 
    for PF in range(len(PerForm)):
@@ -104,7 +125,7 @@ for var in Vars:
       CalDF = eval('CalData.' + PerForm[PF] + '()') 
 
       CalOut = Grd2LL(CalDF, Lat, Lon, PerForCN[PF], VarUnit(var))
-      CalFil = os.path.join(OutDir, keyTime+'__所有網格點__'+var+PerForCN[PF]+'.csv')
+      CalFil = os.path.join(OutDir, keyTime+'__GRIDS__'+var+'_'+PerForEN[PF]+'.csv')
       CalOut.to_csv(CalFil, encoding='utf-8-sig', index = False)
 
 
@@ -112,11 +133,11 @@ for var in Vars:
       CtyDF = CountyDict.CtyData(gridFil, stFil, CtyDict, CalDF)
 
       CtyOut = List2LL(CtyDF, PerForCN[PF], VarUnit(var))
-      CtyFil = os.path.join(OutDir, keyTime+'__各縣市最大值__'+var+PerForCN[PF]+'.csv')
+      CtyFil = os.path.join(OutDir, keyTime+'__COUNTIESMAX__'+var+'_'+PerForEN[PF]+'.csv')
       CtyOut.to_csv(CtyFil, encoding='utf-8-sig', index = False)
 
 
       #繪製等濃度圖
-      Plot = PlotData.plot2D(CalDF['Inc'], Lat, Lon, PerForCN[PF])
+      Plot = PlotData.plot2D(CalDF['Inc'], Lat, Lon, [PerForCN[PF], PerForEN[PF]])
 
 print('finish')

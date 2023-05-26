@@ -2,12 +2,12 @@ import datetime as dt
 import time, calendar
 import os, sys
 import pandas as pd
-from Lib import plot_SimObs
+from Lib import plotSimObs
 from numpy import nan
 
 
 def main():
-    global AirQ_Area, tt_list, ObsDir, SimDir, stFil
+    global AirQ_Area, nowTT, tt_list, ObsDir, SimDir, stFil
 
     ######### 產生繪圖時間間距
     try:
@@ -25,6 +25,7 @@ def main():
        sys.exit()
 
     tt_list = [start, end]
+    nowTT = pd.Timestamp.now().strftime("%Y-%m-%d-%H-%M-%S")
 
 
     ######### 給定測站
@@ -38,13 +39,7 @@ def main():
                  'YunChia': ['台中', '日月潭', '阿里山', '嘉義'  , 
                              '玉山', '永康'  , '台南' ],
                  'East':    ['台中', '花蓮'  , '日月潭', '阿里山', 
-                             '玉山', '成功'  , '台東'  , '大武' ],
-                 'Taiwan':  ['鞍部', '淡水'  , '竹子湖', '基隆'  , 
-                             '台北', '新屋'  , '板橋'  , '新竹'  ,
-                             '宜蘭', '蘇澳'  , '梧棲'  , '台中'  ,
-                             '花蓮', '日月潭', '阿里山', '嘉義'  ,
-                             '玉山', '成功'  , '永康'  , '台南'  ,
-                             '台東', '高雄'  , '大武'  , '恆春']}
+                             '玉山', '成功'  , '台東'  , '大武' ]}
 
     
     ######先將Sim及Obs及St資料讀進來
@@ -55,7 +50,6 @@ def main():
 
     ##畫圖選擇
     MainPlotSimObs()
-
     print('finish')
 
 
@@ -78,7 +72,7 @@ def MainPlotSimObs():
             stInfo = StData.stInfo(stFil)
             stInfo.update({'area': area})
 
-            pp = plot_SimObs.plot_SimObs(stInfo, obsSt, simSt, tt_list)
+            pp = plotSimObs.plot_SimObs(stInfo, obsSt, simSt, tt_list, nowTT)
             for var in vars:
                pp.plot(var)
 

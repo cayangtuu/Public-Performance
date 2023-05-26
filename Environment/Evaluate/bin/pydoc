@@ -1,5 +1,0 @@
-#!/home/cayang/anaconda3/envs/Evaluate/bin/python3.7
-
-import pydoc
-if __name__ == '__main__':
-    pydoc.cli()

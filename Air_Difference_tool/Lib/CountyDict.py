@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 import xarray as xr
-import os
+import os, chardet
+from pathlib import Path
 
 
 def CtyDict(LatLon, SimDir):
@@ -12,7 +13,8 @@ def CtyDict(LatLon, SimDir):
              '37':'彰化縣', '38':'南投縣', '39':'雲林縣', '40':'嘉義縣', '43':'屏東縣', 
              '44':'澎湖縣', '45':'花蓮縣', '46':'台東縣', '50':'金門縣', '51':'連江縣'} 
 
-   Data = pd.read_csv(CtyDir+'/TEDS11_AREA_WGS84.sdf', header=None, dtype=str, encoding='utf-8-sig')
+   encoding = chardet.detect(Path(CtyDir+'/TEDS11_AREA_WGS84.sdf').read_bytes()).get("encoding")
+   Data = pd.read_csv(CtyDir+'/TEDS11_AREA_WGS84.sdf', header=None, dtype=str, encoding=encoding)
    Data.columns = ['Index']
    Data['Lon'] = Data['Index'].map(lambda x:float(x[:9]))
    Data['Lat'] = Data['Index'].map(lambda x:float(x[9:17]))
@@ -28,7 +30,8 @@ def CtyDict(LatLon, SimDir):
       ii, jj = divmod(np.argmin(dis), dis.shape[1])           #所在網格的位置
       CtDict[ii][jj] = DictNm[Data['Dict'][ll][:2]]           #建置每個網格所屬縣市
    print(CtDict)
-   pd.DataFrame(CtDict).to_csv(CtyDir+'/CountyDict.csv', index=False, header=False, encoding='utf-8-sig')
+   CD_encoding = chardet.detect(Path(CtyDir+'/CountyDict.csv').read_bytes()).get("encoding")
+   pd.DataFrame(CtDict).to_csv(CtyDir+'/CountyDict.csv', index=False, header=False, encoding=CD_encoding)
 
    return np.array(CtyDict)
 
@@ -64,7 +67,8 @@ def CtyData(gridFil, stFil, CtyDict, CalDF):
 
    #測站數值
    if os.path.isfile(stFil):
-     stInf = pd.read_csv(stFil, index_col=0, encoding='big5')
+     encoding = chardet.detect(Path(stFil).read_bytes()).get("encoding")
+     stInf = pd.read_csv(stFil, index_col=0, encoding=encoding)
      for st in stInf.index:
         ix, iy = stData([LAT, LON], [stInf.loc[st,'緯度'], stInf.loc[st,'經度']])
         Data.append([st, round(stInf.loc[st,'經度'], 4), round(stInf.loc[st,'緯度'], 5), \

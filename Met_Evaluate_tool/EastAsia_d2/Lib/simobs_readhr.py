@@ -1,6 +1,6 @@
 import pandas as pd
-import csv
-import datetime
+import datetime, chardet
+from pathlib import Path
 
 def obs_readhr(ObsDir, start, end, var):
 
@@ -8,8 +8,9 @@ def obs_readhr(ObsDir, start, end, var):
     filenm = pd.date_range(start=start, end=end, freq='1d').strftime('%Y-%m-%d')
 
     for nm in filenm:
-        tmpData = pd.read_csv(ObsDir + '/' + str(nm) + '_' + var +'_obs.csv',
-                              encoding ='utf-8-sig', index_col=0)
+        Fil = ObsDir + '/' + str(nm) + '_' + var + '_obs.csv'
+        encoding = chardet.detect(Path(Fil).read_bytes()).get("encoding")
+        tmpData = pd.read_csv(Fil, encoding = encoding, index_col = 0)
         df = pd.concat([df, tmpData], axis=0)
  
     df.index.name = 'time'
@@ -23,8 +24,9 @@ def sim_readhr(SimDir, start, end, var):
     filenm = pd.date_range(start=start, end=end, freq='1d').strftime('%Y-%m-%d')
 
     for nm in filenm:
-        tmpData = pd.read_csv(SimDir + '/' + str(nm) + '_' + var +'_sim.csv',
-                              encoding ='utf-8-sig', index_col=0)
+        Fil = SimDir + '/' + str(nm) + '_' + var + '_sim.csv'
+        encoding = chardet.detect(Path(Fil).read_bytes()).get("encoding")
+        tmpData = pd.read_csv(Fil, encoding = encoding, index_col = 0)
         df = pd.concat([df, tmpData], axis=0)
  
     df.index.name = 'time'

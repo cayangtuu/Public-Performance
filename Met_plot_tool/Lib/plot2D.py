@@ -10,12 +10,13 @@ from wrf import getvar, ALL_TIMES
 from netCDF4 import Dataset
 
 class plot2D():
-    def __init__(self, wrfDir, latlon, stInfo, stWind):
+    def __init__(self, wrfDir, latlon, stInfo, stWind, nowTT):
         self.U10, self.V10 = self._open_dataset(wrfDir)
         self.U10.attrs['units'] = 'm/s'  #更改單位形式 轉成metpy才不會出錯
         self.V10.attrs['units'] = 'm/s'  #更改單位形式 轉成metpy才不會出錯
         self.latlon = latlon
         self.stInfo = stInfo
+        self.nowTT = nowTT
         self.stU, self.stV = self._wsd2uv(stWind)
 
     def _open_dataset(self, wrfDir):
@@ -94,22 +95,17 @@ class plot2D():
            ax.set_title('Wind Field at 10m \n' + stime + ' Averaged')
 
 
-        #if True:   ###True(不要印出來)
-        if False:  ###False(將檔案印出來)
-            plt.show()
-            systime.sleep(2)
-        else:
-            outDir = os.path.join('Output', 'output_2D', 
-                                  ts.strftime('%Y%m'), type)
-            try:
-                os.makedirs(outDir)
-            except FileExistsError:
-                pass
+        outDir = os.path.join('Output', 'output_2D', 
+                              self.nowTT+ '_For' +ts.strftime('%Y%m'), type)
+        try:
+            os.makedirs(outDir)
+        except FileExistsError:
+            pass
 
-            if type == 'hour':
-               picFil = os.path.join(outDir,ts.strftime('%Y%m%d%H'))
-            elif type == 'month':
-               picFil = os.path.join(outDir, ts.strftime('%Y%m'))
+        if type == 'hour':
+           picFil = os.path.join(outDir,ts.strftime('%Y%m%d%H'))
+        elif type == 'month':
+           picFil = os.path.join(outDir, ts.strftime('%Y%m'))
 
-            plt.savefig(picFil, bbox_inches='tight', pad_inches=0.3)
-            plt.close()
+        plt.savefig(picFil, bbox_inches='tight', pad_inches=0.3)
+        plt.close()

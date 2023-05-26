@@ -1,7 +1,7 @@
 import pandas as pd 
 import numpy as np
-import datetime
-import os
+import datetime, os, chardet
+from pathlib import Path
 
 class getStData():
     def __init__(self, st, tt_list, vars):
@@ -20,8 +20,9 @@ class getStData():
            varDir = os.path.join(dataDir, var)
            mnData = pd.DataFrame()
            for nm in filenm:
-              df = pd.read_csv(varDir + '/' + nm + '_' + var + '_' + ddtype +'.csv',
-                               encoding= 'utf-8-sig',index_col=0)
+              Fil = varDir + '/' + nm + '_' + var + '_' + ddtype +'.csv'
+              encoding = chardet.detect(Path(Fil).read_bytes()).get("encoding")
+              df = pd.read_csv(Fil, encoding=encoding, index_col=0)
               mnser = pd.Series(data=df[self.st], name=self.st)
               mnData = pd.concat([mnData, mnser], axis=0, sort=False)
 
@@ -36,7 +37,8 @@ class getStData():
 
 
     def stInfo(self, stFil):
-        stData = pd.read_csv(stFil, encoding='utf-8-sig', index_col='ch_name')
+        encoding = chardet.detect(Path(stFil).read_bytes()).get("encoding")
+        stData = pd.read_csv(stFil, encoding=encoding, index_col='ch_name')
         st_info = {'st': self.st, 'stID':stData.loc[self.st, 'stID'], 
                    'enName':stData.loc[self.st, 'en_name'],
                    'lat':stData.loc[self.st, 'lat'], 
@@ -46,7 +48,8 @@ class getStData():
 
 def getWind(stFil, SimDir, tt_list):
 
-    stData = pd.read_csv(stFil, encoding='utf-8-sig')
+    stData_encoding = chardet.detect(Path(stFil).read_bytes()).get("encoding")
+    stData = pd.read_csv(stFil, encoding=stData_encoding)
     stInfo = {'st': stData['ch_name'].to_list(),
               'lat': stData['lat'].to_numpy(),
               'lon': stData['lon'].to_numpy()}
@@ -60,8 +63,9 @@ def getWind(stFil, SimDir, tt_list):
         WDir = os.path.join(SimDir, var)
         Data = pd.DataFrame()
         for nm in filenm:
-            df = pd.read_csv(WDir + '/' + nm + '_' + var + '_sim.csv',
-                             encoding= 'utf-8-sig',index_col=0)
+            Fil = WDir + '/' + nm + '_' + var + '_sim.csv'
+            encoding = chardet.detect(Path(Fil).read_bytes()).get("encoding")
+            df = pd.read_csv(Fil, encoding=encoding, index_col=0)
             stData = pd.DataFrame()
             for st in stInfo['st']:
                 stdf = pd.Series(df[st], name=st, index=df.index)

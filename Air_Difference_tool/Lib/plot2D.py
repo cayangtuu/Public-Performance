@@ -37,11 +37,14 @@ class PLOT():
 
 
     def Index(self, var):
-       vstep = {'SO2':9, 'NO2':9, 'O3':9, 'PM25':9, 'PM10':9}
+#      bounds = [0.1, 0.3, 0.5, 0.8, 1, 1.5, 2]
+       bounds = [0.01, 0.1, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2]
+       norm = colors.BoundaryNorm(boundaries=bounds, ncolors=11)
 
-       bounds = np.linspace(0, 1, 200)
-       norm = colors.BoundaryNorm(boundaries=bounds, ncolors=200)
-       ticks = np.linspace(0, 1, 9)
+       colorsmap = ['deepskyblue','forestgreen','yellowgreen','gold','orange','red']
+       cmap = colors.LinearSegmentedColormap.from_list('aaa', colorsmap) 
+       cmap.set_over('purple')
+       cmap.set_under('white')
 
        if var == 'SO2':
          title = r'SO$_{2}$ (ppbV)'
@@ -54,10 +57,10 @@ class PLOT():
        elif var == 'O3':
          title = r'O$_{3}$ (ppbV)'
 
-       return {'norm':norm, 'ticks':ticks, 'title':title}
+       return {'norm':norm, 'bounds':bounds, 'cmap':cmap, 'title':title}
 
 
-    def plot2D(self, DF, lat, lon, PerforCN):
+    def plot2D(self, DF, lat, lon, Name):
        Data = xr.DataArray(data=DF, dims=["x", "y"],
                            coords=dict(lon=(["x", "y"], lon),
                                        lat=(["x", "y"], lat),
@@ -67,25 +70,26 @@ class PLOT():
        proj = ccrs.LambertConformal(central_longitude=120,
                                     central_latitude=25,
                                     standard_parallels=(10,40))
+
        fig, ax = monet.plots.draw_map(crs=proj, figsize=(10, 11),
                                       extent=self.latlon, states=True, 
                                       resolution='10m', return_fig=True)
 
-       colorlist = ['white','deepskyblue','forestgreen','gold','red','purple']
-       cmap = colors.LinearSegmentedColormap.from_list('AAA', colorlist)
-       pax = Data.plot(x='lon', y='lat', ax=ax, cmap=cmap, norm=self.Index['norm'],
-                       add_colorbar=False, transform=ccrs.PlateCarree(), infer_intervals=True)
+       pax = Data.plot(x='lon', y='lat', ax=ax, cmap=self.Index['cmap'], \
+                       norm=self.Index['norm'], extend='both', add_colorbar=False, \
+                       transform=ccrs.PlateCarree(), infer_intervals=True)
 
        cax = fig.add_axes([ax.get_position().x1+0.01, \
                            ax.get_position().y0,0.02, \
                            ax.get_position().height])
 
-       cbar = plt.colorbar(pax, cax=cax, ticks=self.Index['ticks'], fraction=0.046, pad=0.04)
-       cbar.ax.set_yticklabels(self.Index['ticks'], fontsize=16, weight='bold')
+       cbar = plt.colorbar(pax, cax=cax, ticks=self.Index['bounds'], \
+                           extend='both', fraction=0.046, pad=0.04)
+       cbar.ax.set_yticklabels(self.Index['bounds'], fontsize=16, weight='bold')
 
-       ax.set_title(self.keyTime+' '+self.Index['title']+'\n'+PerforCN, fontproperties=zhfont)
+       ax.set_title(self.keyTime+' '+self.Index['title']+'\n'+Name[0], fontproperties=zhfont)
        ax.annotate(self._maxmin(Data), xy=(0,-25), xycoords='axes points', fontsize=15)
 
-       picFil = os.path.join(self.plotDir, self.keyTime+'_'+self.var+PerforCN+'.png')
+       picFil = os.path.join(self.plotDir, self.keyTime+'_'+self.var+'_'+Name[1]+'.png')
        plt.savefig(picFil, bbox_inches='tight', pad_inches=0.1)
 #      plt.close()

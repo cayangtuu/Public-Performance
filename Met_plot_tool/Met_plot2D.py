@@ -7,7 +7,7 @@ from Lib import plot2D, getStData
 
 
 def main():
-    global tt_list, latlon, wrfDir, stWind, stInfo
+    global nowTT, tt_list, latlon, wrfDir, stWind, stInfo
 
     ######### 產生繪圖時間間距
     try:
@@ -25,6 +25,7 @@ def main():
        sys.exit()
 
     tt_list = [start, end]
+    nowTT = pd.Timestamp.now().strftime("%Y-%m-%d-%H-%M-%S")
 
     
     ######### 產生繪圖經緯度範圍 [lat: 117.68915~124.49884(E), lon: 20.89283~27.013783(N)]
@@ -64,7 +65,7 @@ def main():
 
 def MainPlot2D(Ttype):
     '''平面圖繪製'''
-    WRF = plot2D.plot2D(wrfDir, latlon, stInfo, stWind)
+    WRF = plot2D.plot2D(wrfDir, latlon, stInfo, stWind, nowTT)
 
     if (Ttype == 'hour'):
        tmpT_list = WRF._open_dataset(wrfDir)[1].Time.values

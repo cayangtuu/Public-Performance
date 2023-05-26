@@ -1,13 +1,12 @@
 import datetime as dt
-import time, calendar
-import os, sys
+import os, sys, calendar
 import pandas as pd
 from Lib import plotSimObs
 from numpy import nan
 
 
 def main():
-    global AirQ_Area, tt_list, plotTimeList, cmaqFil, gridFil, stFil, ObsDir
+    global nowTT, AirQ_Area, tt_list, cmaqFil, gridFil, stFil, ObsDir
     AirQ_Area = {'North':   ['基隆', '汐止', '萬里', '新店', '土城', '板橋', '新莊', '菜寮',
                              '林口', '淡水', '士林', '中山', '萬華', '古亭', '松山', '桃園',
                              '大園', '觀音', '平鎮', '龍潭', '湖口', '竹東', '新竹', '頭份', 
@@ -23,7 +22,6 @@ def main():
                              '屏東', '潮州', '恆春'],
                  'East':    ['台東', '花蓮', '埔里', '關山']}
 
-    now = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
 
     ######### 產生繪圖時間間距
     try:
@@ -41,14 +39,20 @@ def main():
        sys.exit()
 
     tt_list = [start, end]
-    plotTimeList = tt_list
-
+    nowTT = pd.Timestamp.now().strftime("%Y-%m-%d-%H-%M-%S")
     
     ######Sim 先將CMAQ資料讀進來
     cmaqDir = os.path.join(os.getcwd(), 'Data', 'Sim')
-    cmaqFil = os.path.join(cmaqDir, 'cctm', 'v4.' + keyTime + '.conc.nc')
     gridFil = os.path.join(cmaqDir, 'mcip', 'GRIDCRO2D_Taiwan.nc')
     stFil   = os.path.join(cmaqDir, 'st.csv')
+
+    cmaqFilNm = input("請輸入欲計算性能評估之模擬檔案名稱，ex:v1.2019-01.conc.nc : ")
+    cmaqFil = os.path.join(cmaqDir, 'cctm', cmaqFilNm)
+    if os.path.isfile(cmaqFil):
+      pass
+    else:
+      print("檔案不存在，請確認輸入檔案名稱是否正確 ! ! !")
+      sys.exit()
 
     ###### Obs 先將觀測資料讀進來
     ObsDir = os.path.join(os.getcwd(), 'Data', 'Obs')
@@ -94,6 +98,7 @@ def TransData(data, Tvars):
     Trans_data.columns = Tvars
     return Trans_data
 
+
 @MainCMAQData
 def MainPlotTimeSeries(CMAQData, type):
     from Lib import getEPA
@@ -105,7 +110,7 @@ def MainPlotTimeSeries(CMAQData, type):
         print('目前進度:', area)
         for st in AirQ_Area[area]:
             #####讀入觀測資訊
-            vars = ['PM10', 'PM25', 'NO2', 'SO2', 'O3', 'NMHC']
+            vars = ['PM10', 'PM25', 'SO2', 'NO2', 'O3', 'NMHC']
             obsSt = getEPA.getEPA(st, tt_list, vars, ObsDir)
 
             #####讀入CMAQ資訊
@@ -113,13 +118,18 @@ def MainPlotTimeSeries(CMAQData, type):
             stInfo.update({'area': area})
             cmaqSt = CMAQData.getCMAQst(lat=stInfo['lat'], lon=stInfo['lon'], vars=vars)
 
-            if all(pd.isnull(obsSt['NMHC'])) == True:
-               Tvars = ['PM10', 'PM25', 'NO2_day', 'SO2', 'O3', 'NO2_hr']
-            else:
-               Tvars = ['PM10', 'PM25', 'NO2_day', 'SO2', 'O3', 'NO2_hr', 'NMHC']
+            for_O3PM = ['for_O3','for_PM']
+            for O3PM in for_O3PM:
+                if O3PM == 'for_O3':
+                   if all(pd.isnull(obsSt['NMHC'])) == True:
+                      Tvars = ['O3', 'NO2_hr']
+                   else:
+                      Tvars = ['O3', 'NO2_hr', 'NMHC']
+                elif O3PM == 'for_PM':
+                   Tvars = ['PM10', 'PM25', 'SO2', 'NO2_day']
 
-            pp = plotSimObs.plotSimObs(stInfo, TransData(obsSt, Tvars), TransData(cmaqSt, Tvars))
-            pp.plot(Tvars, plotTimeList, type=type)
+                pp = plotSimObs.plotSimObs(nowTT, stInfo, TransData(obsSt, Tvars), TransData(cmaqSt, Tvars))
+                pp.plot(Tvars, tt_list, O3PM, type=type)
 
 
 if __name__ == '__main__':

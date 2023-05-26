@@ -1,9 +1,0 @@
-Name: libpq
-Description: PostgreSQL libpq library
-Url: http://www.postgresql.org/
-Version: 12.3
-Requires: 
-Requires.private: 
-Cflags: -I/home/cayang/anaconda3/envs/Evaluate/include
-Libs: -L/home/cayang/anaconda3/envs/Evaluate/lib -lpq
-Libs.private: -L/home/cayang/anaconda3/envs/Evaluate/lib -lssl -lcrypto -lgssapi_krb5 -lcrypt -lm
